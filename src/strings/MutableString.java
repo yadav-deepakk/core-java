@@ -42,7 +42,12 @@ public class MutableString {
 		// as soon as capacity is full and more characters are being added.
 		// new_capacity = (old_capacity + no of newly added chars) * 2; 
 		StringBuffer sb3 = new StringBuffer(); // capacity=16, length=0
-
+		sb3.append("english alphabet");
+		System.out.println(sb3);
+		System.out.println("capacity before adding \"s\": " + sb3.capacity());
+		sb3.append("s english alphabets"); 
+		System.out.println(sb3);
+		System.out.println("capacity after adding \"s\": " + sb3.capacity());
 
 	}
 
