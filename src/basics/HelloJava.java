@@ -39,6 +39,15 @@ public class HelloJava {
 		System.out.println("binaryValue1: " + binaryValue1);
 		
 		// (5) String (6) char, (7) boolean, (8) null
+		String str1 = "Example String Literal."; // 
+		char ch = 'c';
+		boolean isTrue = true; 
+		String str2 = null; // objects can store null values. 
+		System.out.println("string literal: " + str1);
+		System.out.println("character literal: " + ch);
+		System.out.println("boolean literal: " + isTrue);
+		System.out.println("null  literal: " + str2);
+		
 	}
 
 	public static void dataTypesInJava() {
@@ -364,7 +373,7 @@ public class HelloJava {
 	public static void main(String[] args) {
 		// identifier:- name given to any class, method, variable or a package
 		// literals - possible values that could be assigned to variables. 
-		identifiersLiterals(); 
+//		identifiersLiterals(); 
 		
 		// Data types in java
 		// (1) Primitive:-
