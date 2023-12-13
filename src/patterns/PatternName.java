@@ -64,7 +64,7 @@ public class PatternName {
 
 	public static void main(String[] args) {
 		int n = 10;
-		deepak(10, '#');
+		deepak(n, '#');
 
 	}
 
