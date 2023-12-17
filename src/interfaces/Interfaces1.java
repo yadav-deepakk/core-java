@@ -2,22 +2,22 @@ package interfaces;
 
 interface A{
 	int a = 10; 
-	void A(); 
+	void methodA(); 
 }
 
 interface B{
 	int b = 20; 
-	void B(); 
+	void methodB(); 
 }
 
 class AB implements A, B{
 	@Override
-	public void A() {
+	public void methodA() {
 		System.out.println("Method A");
 	}
 	
 	@Override
-	public void B() {
+	public void methodB() {
 		System.out.println("Method B");
 	}
 }
@@ -30,8 +30,8 @@ public class Interfaces1 {
 		System.out.println(B.b); 
 
 		AB ab = new AB(); 
-		ab.A();
-		ab.B();
+		ab.methodA();
+		ab.methodB();
 	}
 
 }
