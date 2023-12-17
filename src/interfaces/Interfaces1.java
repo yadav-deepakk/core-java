@@ -1,5 +1,13 @@
 package interfaces;
 
+
+// interfaces are much similar to abstract class but they are not class and can not be instantiated.
+/* 1. interfaces are implemented, abstract classes are extended 
+ * 2. they can not be instantiated and can not have a constructor. 
+ * 3. variables declared are public static final, hence always assigned a value. 
+ * 4. methods are public and abstract(even if they aren't declared with abstract keyword.)
+ * */
+
 interface A{
 	int a = 10; 
 	void methodA(); 
@@ -11,6 +19,7 @@ interface B{
 }
 
 class AB implements A, B{
+	
 	@Override
 	public void methodA() {
 		System.out.println("Method A");
@@ -32,6 +41,7 @@ public class Interfaces1 {
 		AB ab = new AB(); 
 		ab.methodA();
 		ab.methodB();
+		System.out.println(ab.a);
 	}
 
 }
