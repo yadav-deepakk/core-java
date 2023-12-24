@@ -48,9 +48,34 @@ public class ArrayListDemo {
 
 	}
 
+	public static void arrayListMethod3() {
+		ArrayList arrList = new ArrayList();
+		arrList.add(10);
+		arrList.add(13);
+		arrList.add(11);
+
+		System.out.println("List contains 10: " + arrList.contains(10)); // true
+		arrList.ensureCapacity(10);
+		System.out.println("List size: " + arrList.size());
+		System.out.println("index of 13 is : " + arrList.indexOf(13));
+
+		ArrayList arrListClone = (ArrayList) arrList.clone();
+		arrList.clear();
+		System.out.println("arrList isEmpty ?: " + arrList.isEmpty());
+		System.out.println("arrListClone isEmpty ?: " + arrListClone.isEmpty());
+		// System.out.println(arrListClone);
+
+		for (int i = 0; i < arrListClone.size(); i++) {
+			System.out.print(arrListClone.get(i) + " ");
+
+		}
+
+	}
+
 	public static void main(String[] args) {
-		arrayListMethod1(); 
-		arrayListMethod2();
+		// arrayListMethod1();
+		// arrayListMethod2();
+		arrayListMethod3();
 	}
 
 }
