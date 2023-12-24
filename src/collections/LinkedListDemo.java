@@ -3,8 +3,8 @@ package collections;
 import java.util.LinkedList;
 
 public class LinkedListDemo {
-
-	public static void main(String[] args) {
+	
+	public static void linkedListMethod1(){
 		LinkedList<Integer> linked_list = new LinkedList<Integer>();
 		
 		linked_list.add(10);
@@ -28,7 +28,34 @@ public class LinkedListDemo {
 
 		linked_list.remove(2);
 		System.out.println("After remove(2): " + linked_list);
+	}
+
+	
+	public static void linkedListMethod2(){
+		LinkedList ll1 = new LinkedList(); 
+
+		ll1.add(7); 
+		ll1.add(10);
+		ll1.add(17); 
+		ll1.add(19);
 		
+		ll1.add(1, 77); 
+		ll1.indexOf(7); 
+		ll1.addFirst(0);
+		ll1.addLast(100);
+		
+		System.out.println(ll1);
+		
+		ll1.remove(3); 
+		ll1.removeFirst(); 
+		ll1.removeLast(); 
+		
+		System.out.println(ll1);
+	}
+
+	public static void main(String[] args) {
+
+		linkedListMethod2(); 
 	}
 
 }
