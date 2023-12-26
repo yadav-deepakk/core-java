@@ -1,7 +1,9 @@
 package collections;
 
 import java.util.List;
+import java.util.ListIterator;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ArrayListDemo {
 
@@ -72,10 +74,59 @@ public class ArrayListDemo {
 
 	}
 
+	public static void arrayListMethod4() {
+		ArrayList al = new ArrayList();
+		al.add(10);
+		al.add(13);
+		al.add(11);
+
+		// System.out.println(arrListClone);
+		// loops are not advised to use to traverse
+		for (int i = 0; i < al.size(); i++) {
+			System.out.print(al.get(i) + " ");
+		}
+
+		System.out.println("\nUsing iterator");
+
+		Iterator iter = al.iterator();
+		while (iter.hasNext()) {
+			System.out.println(iter.next());
+		}
+
+		System.out.println("Using list iterator(forward)" + "\n");
+		// listIter is available in list only
+		// listIter allows to traverse forwards and backwards too.
+		ListIterator listIter = al.listIterator();
+		while (listIter.hasNext()) {
+			Object o = listIter.next();
+			System.out.println(o);
+			if (o.equals(13)) {
+				listIter.add(100);
+			}
+		}
+
+		System.out.println("after adding 100 arraylist: " + al + "\n");
+
+		// traversing backwards
+		while (listIter.hasPrevious()) {
+			Object o = listIter.previous();
+			System.out.println(o);
+			if (o.equals(100)) {
+				listIter.add(99);
+			}
+		}
+		
+		System.out.println("after adding 99 arraylist: " + al + "\n");
+
+
+	}
+
 	public static void main(String[] args) {
 		// arrayListMethod1();
 		// arrayListMethod2();
-		arrayListMethod3();
+		// arrayListMethod3();
+
+		arrayListMethod4();
 	}
 
 }
