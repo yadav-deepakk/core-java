@@ -51,6 +51,22 @@ public class MapsInJava {
 		// for each loop
 		System.out.println("======== ForEach loop ========");
 		map.forEach((key, value) -> System.out.println("Roll No: " + key + ", Name: " + value));
+		
+		
+		System.out.println("\n======== LinkedHashMap ========");
+		// LinkedHashMap -> maintains order of insertion. 
+		Map map1 = new LinkedHashMap(); 
+
+		// put method is used to insert an entry into map
+		map1.put(3, "Parth Singh");
+		map1.put(4, "Nitesh Singh");
+		map1.put(5, "Pravin Kumar");
+		map1.put(2, "Dara Singh"); // will be changed.
+		map1.put(null, null);
+		map1.put(1, "Deepak Kumar");
+		map1.put(2, "Tara Singh"); // will update previous value
+		
+		System.out.println(map1);
 
 	}
 
