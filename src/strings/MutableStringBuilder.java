@@ -15,7 +15,14 @@ public class MutableStringBuilder {
 		System.out.println(sbldr2.capacity()); // capacity - 150
 		
 		
-
+		StringBuilder[] sbs= new StringBuilder[3];
+		for (int i=0; i<sbs.length; i++) {
+			sbs[i] = new StringBuilder("String" + (i+1)); 
+		}
+		
+		for (StringBuilder s : sbs) {
+			System.out.println(s);
+		}
 	}
 
 }
