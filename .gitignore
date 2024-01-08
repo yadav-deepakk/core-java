@@ -2,3 +2,5 @@
 .project
 .settings
 bin/
+IO_OPERATIONS
+txtFile1.txt
