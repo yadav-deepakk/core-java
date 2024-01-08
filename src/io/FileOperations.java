@@ -7,11 +7,11 @@ public class FileOperations {
 		File file1 = new File("txtFile1.txt"); // creates file in current workspace
 		System.out.println(file1.exists());
 		
-		File file2 = new File("IO_OPERATIONS"); 
-		System.out.println(file2.exists());
+		File dir = new File("IO_OPERATIONS"); 
+		System.out.println(dir.exists());
 		try{
 			file1.createNewFile(); 
-			file2.createNewFile(); 
+			dir.mkdir(); 
 			System.out.println(file1.getPath());
 			System.out.println(file1.getAbsolutePath());
 			
