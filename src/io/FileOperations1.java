@@ -2,7 +2,7 @@ package io;
 
 import java.io.*;
 
-public class FileOperations {
+public class FileOperations1 {
 	public static void main(String[] args) {
 		File file1 = new File("txtFile1.txt"); // creates file in current workspace
 		System.out.println(file1.exists());
