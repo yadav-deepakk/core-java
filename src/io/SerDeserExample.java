@@ -5,7 +5,7 @@ import java.io.*;
 class Student implements Serializable {
 	private int rollNo;
 	private String name;
-	private float age;
+	transient private float age;
 
 	public Student() {
 	}
@@ -49,17 +49,21 @@ class Student implements Serializable {
 public class SerDeserExample {
 
 	public static void main(String[] args) {
-//
-//		Student serializeObject = new Student(11, 19.05f, "Deep Shah");
-//		serializeObject.toString();
+
+//		Student serializeObject = new Student(11, 19.05f, "Anoop Singh");
+//		System.out.println("--------- Before Deserialisation -----------");
+//		System.out.println(serializeObject.toString());
+//		System.out.println(serializeObject.getAge());
 
 		String dir = "IO_OPERATIONS";
-		String fileName = "objectFile.txt";
+		String fileName = "objectTransientFile.txt";
 		File file = new File(dir, fileName);
 
 //		// Serializing object and storing into the file.
 //		try (FileOutputStream fos = new FileOutputStream(file); ObjectOutputStream oos = new ObjectOutputStream(fos);) {
+//
 //			oos.writeObject(serializeObject);
+//
 //		} catch (FileNotFoundException e) {
 //			e.printStackTrace();
 //		} catch (IOException e) {
@@ -68,16 +72,14 @@ public class SerDeserExample {
 //			e.printStackTrace();
 //		}
 
-		// Deserializing object 'c' and storing into the file.
+		// Reading from file and De-serializing object.
 		try (FileInputStream fis = new FileInputStream(file); ObjectInputStream ois = new ObjectInputStream(fis);) {
-			
+
 			Student deserialiseObject = (Student) ois.readObject();
+			System.out.println("--------- After Deserialisation -----------");
 			System.out.println(deserialiseObject.toString());
-			System.out.println(deserialiseObject.getRollNo()); 
-			System.out.println(deserialiseObject.getName()); 
-			System.out.println(deserialiseObject.getAge()); 
-			
-			
+			System.out.println("Age : " + deserialiseObject.getAge()); 
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
