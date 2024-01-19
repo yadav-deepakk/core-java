@@ -1,0 +1,12 @@
+-- DML: Select, Insert, Delete, Update
+-- DDL: create, truncate, drop
+
+create database hilton_hotel;
+
+create table dish (dishid integer primary key not null, dishname varchar(256), price double(10,2)); 
+create table customer(cid integer primary key not null, phone integer unique not null, email varchar(256), name varchar(256), dob date); 
+create table booking(bookingid varchar(256) primary key not null, cid integer references customer(cid), dishid integer, quantity integer);
+
+select * from customer; 
+select * from dish; 
+
