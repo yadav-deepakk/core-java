@@ -14,6 +14,31 @@ public class Sorting {
 		}
 	}
 
+	private static void quicksort(int[] arr, int left, int right) {
+		if (left < right) {
+			int pivotIndex = partition(arr, left, right);
+			quicksort(arr, left, pivotIndex - 1);
+			quicksort(arr, pivotIndex + 1, right);
+		}
+	}
+
+	private static int partition(int[] arr, int left, int right) {
+		int pivotValue = arr[right];
+		int i = left - 1;
+		for (int j = left; j < right; j++) {
+			if (arr[j] < pivotValue) {
+				i++;
+				int temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+		int temp = arr[i + 1];
+		arr[i + 1] = arr[right];
+		arr[right] = temp;
+		return i + 1;
+	}
+
 	public static void main(String[] args) {
 		int arr[] = { 4, 6, 1, 3, 33, 53, 23, 34 };
 		System.out.print("ARRAY: \n");
@@ -23,7 +48,8 @@ public class Sorting {
 
 		System.out.print("\n\n");
 
-		bubbleSort(arr); // O(n^2)
+		// bubbleSort(arr); // O(n^2)
+		quicksort(arr, 0, arr.length - 1); // O(n.logn)
 
 		System.out.print("ARRAY AFTER SORTNG: \n");
 		for (int i = 0; i < arr.length; i++) {
